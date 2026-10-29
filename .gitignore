@@ -1,0 +1,18 @@
+# Build output and local settings
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+captures/
+.DS_Store
+
+# Never commit signing keys or built apps
+*.jks
+*.keystore
+*.apk
+*.aab
+/app/release/
+
+# Stray copy from an earlier download
+gradle/wrapper/*.txt

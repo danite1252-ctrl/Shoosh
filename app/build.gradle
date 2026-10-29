@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+}
+
+// GitHub release builds pass -PshooshVersion=1.4 and -PshooshUpdateRepo=owner/repo.
+// Local Android Studio builds use the defaults below.
+def releaseVersion = findProperty('shooshVersion')?.toString()
+def updateRepo = (findProperty('shooshUpdateRepo') ?: '').toString().trim()
+
+// 1.4 -> 10400, 1.4.2 -> 10402, so every release is numbered higher than the last.
+def versionCodeFor = { String v ->
+    def parts = v.tokenize('.').collect { it as int }
+    while (parts.size() < 3) {
+        parts << 0
+    }
+    return parts[0] * 10000 + parts[1] * 100 + parts[2]
+}
+
+android {
+    namespace = 'app.shoosh'
+    compileSdk = 35
+
+    defaultConfig {
+        applicationId = 'com.danielhart.shoosh'
+        minSdk = 26
+        targetSdk = 35
+        versionCode = releaseVersion ? versionCodeFor(releaseVersion) : 4
+        versionName = releaseVersion ?: '1.3'
+        buildConfigField 'String', 'UPDATE_REPO', "\"${updateRepo}\""
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    // GitHub supplies the signing key through secrets (see README).
+    if (System.getenv('SHOOSH_KEYSTORE')) {
+        signingConfigs {
+            release {
+                storeFile = file(System.getenv('SHOOSH_KEYSTORE'))
+                storePassword = System.getenv('SHOOSH_KEYSTORE_PASSWORD')
+                keyAlias = System.getenv('SHOOSH_KEY_ALIAS')
+                keyPassword = System.getenv('SHOOSH_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            if (System.getenv('SHOOSH_KEYSTORE')) {
+                signingConfig = signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}

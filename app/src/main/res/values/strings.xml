@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shoosh</string>
+    <string name="tagline">Quiet, for a while.</string>
+
+    <string name="label_idle">QUIET FOR</string>
+    <string name="label_active">SOUND BACK IN</string>
+    <string name="ends_at">Sound back at %1$s</string>
+    <string name="silent_until">Vibrate only until %1$s</string>
+
+    <string name="preset_15">15m</string>
+    <string name="preset_30">30m</string>
+    <string name="preset_60">1h</string>
+    <string name="preset_120">2h</string>
+    <string name="minus">−</string>
+    <string name="plus">+</string>
+    <string name="minus_desc">5 minutes less</string>
+    <string name="plus_desc">5 minutes more</string>
+
+    <string name="go">Shoosh</string>
+    <string name="extend">+15 min</string>
+    <string name="restore_now">Sound back on</string>
+
+    <string name="permission_title">One quick thing</string>
+    <string name="permission_body">To switch your phone to vibrate, Android needs you to allow Shoosh under Do Not Disturb access. Find Shoosh in the list and switch it on.</string>
+    <string name="grant">Open settings</string>
+
+    <string name="now_silent">Shh… vibrate only</string>
+    <string name="start_failed">Couldn\'t switch to vibrate. Check that Shoosh has Do Not Disturb access.</string>
+
+    <string name="modes_title">YOUR MODES</string>
+    <string name="modes_hint">Tap to start · hold to edit</string>
+    <string name="new_mode">+ New mode</string>
+    <string name="new_mode_title">New mode</string>
+    <string name="edit_mode_title">Edit mode</string>
+    <string name="mode_name_hint">Name, e.g. Church</string>
+    <string name="unit_hours">hr</string>
+    <string name="unit_minutes">min</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="mode_needs_name">Give your mode a name</string>
+    <string name="mode_needs_time">Pick a time of at least 1 minute</string>
+    <string name="mode_started">%1$s mode on. Shh…</string>
+
+    <string name="shortcut_long">%1$s · %2$s</string>
+    <string name="widget_modes_label">Shoosh modes</string>
+    <string name="widget_modes_desc">Start one of your modes with a tap</string>
+    <string name="widget_dial_label">Shoosh timer</string>
+    <string name="widget_dial_desc">Set a time with − and +, then tap zzz</string>
+    <string name="widget_empty">Add modes in Shoosh</string>
+    <string name="widget_zzz">zzz</string>
+    <string name="widget_zzz_desc">Start quiet time</string>
+    <string name="widget_minus_desc">15 minutes less</string>
+    <string name="widget_plus_desc">15 minutes more</string>
+
+    <string name="restore_channel_name">Turning sound back on</string>
+    <string name="restoring">Turning your sound back on…</string>
+    <string name="retry_title">Quiet time is over</string>
+    <string name="retry_text">Tap to turn your sound back on</string>
+
+    <string name="update_available">Version %1$s is ready</string>
+    <string name="update_install">Update</string>
+    <string name="update_downloading">Getting…</string>
+    <string name="update_allow_installs">Allow Shoosh to install updates, then tap Update again</string>
+    <string name="update_failed">Update didn\'t install: %1$s</string>
+
+    <string name="channel_name">Shoosh timer</string>
+    <string name="notif_text">Your sound comes back on automatically.</string>
+</resources>
